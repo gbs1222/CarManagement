@@ -1,0 +1,22 @@
+services:
+  postgres:
+    image: postgres
+    container_name: postgres-container
+    restart: always
+    environment:
+      - POSTGRES_DB=car_management
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=999
+    ports:
+      - '5432:5432'
+  
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin-container
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=ggirkelidze@mail.com
+      - PGADMIN_DEFAULT_PASSWORD=999
+    ports:
+      - '80:80'
+    depends_on:
+      - postgres
