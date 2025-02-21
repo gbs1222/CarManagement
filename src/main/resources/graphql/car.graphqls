@@ -1,0 +1,10 @@
+type Query {
+    cars(filter: FilterInput, pageInput: PageInput): CarPage
+    carById(id: ID!): Car
+}
+
+type Mutation {
+    addCar(input: AddCarInput!): Car
+    updateCarDetails(input: UpdateCarInput!): Car
+    deleteCar(id: ID!): Boolean
+}

@@ -1,0 +1,45 @@
+input AddCarInput {
+    brand: String!
+    model: String!
+    color: String!
+    yearOfProduction: Int!
+    price: Float!
+}
+
+input UpdateCarInput {
+    id: ID!
+    brand: String
+    model: String
+    color: String
+    yearOfProduction: Int
+    price: Float
+}
+
+type Car {
+    id: ID!
+    brand: String!
+    model: String!
+    color: String!
+    yearOfProduction: Int!
+    price: Float!
+}
+
+input FilterInput {
+    brand: String
+    color: String
+    yearOfProduction: Int
+    price: Float
+}
+
+input PageInput {
+    page: Int!
+    size: Int!
+}
+
+type CarPage {
+    content: [Car!]!
+    totalPages: Int!
+    totalElements: Int!
+    size: Int!
+    number: Int!
+}

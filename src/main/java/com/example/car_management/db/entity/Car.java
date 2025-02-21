@@ -1,4 +1,4 @@
-package com.example.car_management.db;
+package com.example.car_management.db.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -9,16 +9,18 @@ import org.hibernate.annotations.UuidGenerator;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Entity
 @Table(name = "cars")
 @Data
 @NoArgsConstructor
-public class CarEntity {
+public class Car {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @UuidGenerator
-    private String id;
+    private UUID id;
 
     @Column(name = "brand")
     private String brand;
@@ -43,7 +45,7 @@ public class CarEntity {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
-    public CarEntity(String brand, String model, String color, int yearOfProduction, BigDecimal price) {
+    public Car(String brand, String model, String color, int yearOfProduction, BigDecimal price) {
         this.brand = brand;
         this.model = model;
         this.color = color;

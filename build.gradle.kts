@@ -21,6 +21,12 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-graphql")
+	implementation("org.springframework.boot:spring-boot-starter-websocket")
+	implementation("org.springframework.boot:spring-boot-starter-validation")
+
+	implementation("com.graphql-java:graphql-java")
+
+	implementation("jakarta.validation:jakarta.validation-api")
 
 	implementation("org.postgresql:postgresql")
 
@@ -30,6 +36,8 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.springframework:spring-webflux")
 	testImplementation("org.springframework.graphql:spring-graphql-test")
+	testImplementation("com.h2database:h2")
+	testImplementation("io.projectreactor:reactor-test")
 
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
